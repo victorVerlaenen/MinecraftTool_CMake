@@ -1,11 +1,11 @@
-#include "JsonToObj.h"
+#include "FileConverter.h"
 #include "rapidjson.h"
 #include "document.h"
 #include "istreamwrapper.h"
 #include <fstream>
 #include <Windows.h>
 
-bool fileConvertor::JsonToObj::ParseJsonToBlocks(const wchar_t* fileToParse, std::vector<Block*>& blockList)
+bool convert::FileConverter::ParseJsonToBlocks(const wchar_t* fileToParse, std::vector<Block*>& blockList)
 {
 	using rapidjson::Document;
 	Document jsonDoc;
@@ -43,7 +43,7 @@ bool fileConvertor::JsonToObj::ParseJsonToBlocks(const wchar_t* fileToParse, std
 	return false;
 }
 
-void fileConvertor::JsonToObj::WriteBlocksToObj(const wchar_t* fileToWrite, const std::vector<Block*>& blockList)
+void convert::FileConverter::WriteBlocksToObj(const wchar_t* fileToWrite, const std::vector<Block*>& blockList)
 {
 	// Create new file to write to
 	FILE* pOFile = nullptr;
@@ -63,7 +63,7 @@ void fileConvertor::JsonToObj::WriteBlocksToObj(const wchar_t* fileToWrite, cons
 	}
 }
 
-void fileConvertor::JsonToObj::WriteBlocks(FILE* pFile, const std::vector<Block*>& blocks)
+void convert::FileConverter::WriteBlocks(FILE* pFile, const std::vector<Block*>& blocks)
 {
 	// Write all the vertices for every block in the list
 	for (auto pBlock : blocks)

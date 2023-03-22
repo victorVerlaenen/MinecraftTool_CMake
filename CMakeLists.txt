@@ -2,8 +2,8 @@
 cmake_minimum_required(VERSION 3.25)
 
 project(MinecraftTool)
-add_subdirectory(rapidjson)
-add_subdirectory(JsonToObj)
+add_subdirectory("Libraries/rapidjson")
+add_subdirectory("Libraries/FileConverter")
 add_subdirectory(MinecraftTool)
 	
 install(TARGETS MinecraftTool DESTINATION bin)
