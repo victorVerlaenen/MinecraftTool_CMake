@@ -1,6 +1,6 @@
-^D:\DEVELOPEMENT\TOOL_DEVELOPEMENT\C++\MINECRAFTTOOL\BUILD\CMAKEFILES\0206CDC09497444DD657482AD0B111D4\GENERATE.STAMP.RULE
+^C:\DEVELOPMENT\TOOL_DEVELOPEMENT\MINECRAFTTOOL_CMAKE\BUILD\CMAKEFILES\17F9C1BF843AC3D51D008F201C03EB1A\GENERATE.STAMP.RULE
 setlocal
-"D:\Program Files\CMake\bin\cmake.exe" -SD:/Developement/Tool_developement/c++/MinecraftTool -BD:/Developement/Tool_developement/c++/MinecraftTool/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file D:/Developement/Tool_developement/c++/MinecraftTool/build/MinecraftTool.sln
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Development/Tool_developement/MinecraftTool_CMake -BC:/Development/Tool_developement/MinecraftTool_CMake/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Development/Tool_developement/MinecraftTool_CMake/build/MinecraftTool.sln
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone

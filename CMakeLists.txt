@@ -5,11 +5,6 @@ project(MinecraftTool)
 add_subdirectory(rapidjson)
 add_subdirectory(JsonToObj)
 add_subdirectory(MinecraftTool)
-
-target_include_directories(MinecraftTool PUBLIC
-	"${PROJECT_BINARY_DIR}" 
-	"${JsonToObjIncludeDir}"
-	)
 	
 install(TARGETS MinecraftTool DESTINATION bin)
 

@@ -2,7 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>D:\Developement\Tool_developement\c++\MinecraftTool\build\x64\Debug\ZERO_CHECK</FullPath>
+      <FullPath>C:\Development\Tool_developement\MinecraftTool_CMake\build\x64\Debug\ZERO_CHECK</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

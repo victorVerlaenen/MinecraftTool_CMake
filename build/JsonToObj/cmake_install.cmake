@@ -1,4 +1,4 @@
-# Install script for directory: D:/Developement/Tool_developement/c++/MinecraftTool/JsonToObj
+# Install script for directory: C:/Development/Tool_developement/MinecraftTool_CMake/JsonToObj
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

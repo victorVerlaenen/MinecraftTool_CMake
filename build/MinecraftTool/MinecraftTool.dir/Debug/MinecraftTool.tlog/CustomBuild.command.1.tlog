@@ -1,6 +1,6 @@
-^D:\DEVELOPEMENT\TOOL_DEVELOPEMENT\C++\MINECRAFTTOOL\MINECRAFTTOOL\CMAKELISTS.TXT
+^C:\DEVELOPMENT\TOOL_DEVELOPEMENT\MINECRAFTTOOL_CMAKE\MINECRAFTTOOL\CMAKELISTS.TXT
 setlocal
-"D:\Program Files\CMake\bin\cmake.exe" -SD:/Developement/Tool_developement/c++/MinecraftTool -BD:/Developement/Tool_developement/c++/MinecraftTool/build --check-stamp-file D:/Developement/Tool_developement/c++/MinecraftTool/build/MinecraftTool/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Development/Tool_developement/MinecraftTool_CMake -BC:/Development/Tool_developement/MinecraftTool_CMake/build --check-stamp-file C:/Development/Tool_developement/MinecraftTool_CMake/build/MinecraftTool/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone

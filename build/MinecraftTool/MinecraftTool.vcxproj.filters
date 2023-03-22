@@ -1,16 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="D:\Developement\Tool_developement\c++\MinecraftTool\MinecraftTool\MinecraftTool.cpp">
+    <ClCompile Include="C:\Development\Tool_developement\MinecraftTool_CMake\MinecraftTool\MinecraftTool.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <CustomBuild Include="D:\Developement\Tool_developement\c++\MinecraftTool\MinecraftTool\CMakeLists.txt" />
+    <CustomBuild Include="C:\Development\Tool_developement\MinecraftTool_CMake\MinecraftTool\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Source Files">
-      <UniqueIdentifier>{4BC6AF4B-1FBF-3BFE-94B4-B90614C3729B}</UniqueIdentifier>
+      <UniqueIdentifier>{6BA4A0D5-C83C-3761-B018-D1F7FC033A06}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

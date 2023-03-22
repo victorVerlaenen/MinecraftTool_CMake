@@ -22,7 +22,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{F1A4A3CC-AD52-3729-9168-7E927F507A80}</ProjectGuid>
+    <ProjectGuid>{AFC81ADA-AA57-3E33-9019-9734EF778EFF}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <WindowsTargetPlatformVersion>10.0.22000.0</WindowsTargetPlatformVersion>
     <Platform>x64</Platform>
@@ -59,25 +59,25 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup>
     <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Developement\Tool_developement\c++\MinecraftTool\build\MinecraftTool\Debug\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Development\Tool_developement\MinecraftTool_CMake\build\MinecraftTool\Debug\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MinecraftTool.dir\Debug\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">MinecraftTool</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Developement\Tool_developement\c++\MinecraftTool\build\MinecraftTool\Release\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Development\Tool_developement\MinecraftTool_CMake\build\MinecraftTool\Release\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MinecraftTool.dir\Release\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">MinecraftTool</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|x64'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Developement\Tool_developement\c++\MinecraftTool\build\MinecraftTool\MinSizeRel\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Development\Tool_developement\MinecraftTool_CMake\build\MinecraftTool\MinSizeRel\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">MinecraftTool.dir\MinSizeRel\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">MinecraftTool</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">.exe</TargetExt>
     <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkIncremental>
     <GenerateManifest Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</GenerateManifest>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Developement\Tool_developement\c++\MinecraftTool\build\MinecraftTool\RelWithDebInfo\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Development\Tool_developement\MinecraftTool_CMake\build\MinecraftTool\RelWithDebInfo\</OutDir>
     <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">MinecraftTool.dir\RelWithDebInfo\</IntDir>
     <TargetName Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">MinecraftTool</TargetName>
     <TargetExt Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">.exe</TargetExt>
@@ -86,7 +86,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\Developement\Tool_developement\c++\MinecraftTool\build;D:\Developement\Tool_developement\c++\MinecraftTool\JsonToObj;D:\Developement\Tool_developement\c++\MinecraftTool\rapidjson;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Development\Tool_developement\MinecraftTool_CMake\JsonToObj;C:\Development\Tool_developement\MinecraftTool_CMake\rapidjson;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
@@ -101,10 +101,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_DEBUG;_WINDOWS;CMAKE_INTDIR=\"Debug\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\Developement\Tool_developement\c++\MinecraftTool\build;D:\Developement\Tool_developement\c++\MinecraftTool\JsonToObj;D:\Developement\Tool_developement\c++\MinecraftTool\rapidjson;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Development\Tool_developement\MinecraftTool_CMake\JsonToObj;C:\Development\Tool_developement\MinecraftTool_CMake\rapidjson;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\Developement\Tool_developement\c++\MinecraftTool\build;D:\Developement\Tool_developement\c++\MinecraftTool\JsonToObj;D:\Developement\Tool_developement\c++\MinecraftTool\rapidjson;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Development\Tool_developement\MinecraftTool_CMake\JsonToObj;C:\Development\Tool_developement\MinecraftTool_CMake\rapidjson;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -117,8 +117,8 @@
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>D:/Developement/Tool_developement/c++/MinecraftTool/build/MinecraftTool/Debug/MinecraftTool.lib</ImportLibrary>
-      <ProgramDataBaseFile>D:/Developement/Tool_developement/c++/MinecraftTool/build/MinecraftTool/Debug/MinecraftTool.pdb</ProgramDataBaseFile>
+      <ImportLibrary>C:/Development/Tool_developement/MinecraftTool_CMake/build/MinecraftTool/Debug/MinecraftTool.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Development/Tool_developement/MinecraftTool_CMake/build/MinecraftTool/Debug/MinecraftTool.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -127,7 +127,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\Developement\Tool_developement\c++\MinecraftTool\build;D:\Developement\Tool_developement\c++\MinecraftTool\JsonToObj;D:\Developement\Tool_developement\c++\MinecraftTool\rapidjson;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Development\Tool_developement\MinecraftTool_CMake\JsonToObj;C:\Development\Tool_developement\MinecraftTool_CMake\rapidjson;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>Sync</ExceptionHandling>
       <InlineFunctionExpansion>AnySuitable</InlineFunctionExpansion>
@@ -142,10 +142,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"Release\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\Developement\Tool_developement\c++\MinecraftTool\build;D:\Developement\Tool_developement\c++\MinecraftTool\JsonToObj;D:\Developement\Tool_developement\c++\MinecraftTool\rapidjson;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Development\Tool_developement\MinecraftTool_CMake\JsonToObj;C:\Development\Tool_developement\MinecraftTool_CMake\rapidjson;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\Developement\Tool_developement\c++\MinecraftTool\build;D:\Developement\Tool_developement\c++\MinecraftTool\JsonToObj;D:\Developement\Tool_developement\c++\MinecraftTool\rapidjson;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Development\Tool_developement\MinecraftTool_CMake\JsonToObj;C:\Development\Tool_developement\MinecraftTool_CMake\rapidjson;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -158,8 +158,8 @@
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>D:/Developement/Tool_developement/c++/MinecraftTool/build/MinecraftTool/Release/MinecraftTool.lib</ImportLibrary>
-      <ProgramDataBaseFile>D:/Developement/Tool_developement/c++/MinecraftTool/build/MinecraftTool/Release/MinecraftTool.pdb</ProgramDataBaseFile>
+      <ImportLibrary>C:/Development/Tool_developement/MinecraftTool_CMake/build/MinecraftTool/Release/MinecraftTool.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Development/Tool_developement/MinecraftTool_CMake/build/MinecraftTool/Release/MinecraftTool.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -168,7 +168,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\Developement\Tool_developement\c++\MinecraftTool\build;D:\Developement\Tool_developement\c++\MinecraftTool\JsonToObj;D:\Developement\Tool_developement\c++\MinecraftTool\rapidjson;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Development\Tool_developement\MinecraftTool_CMake\JsonToObj;C:\Development\Tool_developement\MinecraftTool_CMake\rapidjson;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <ExceptionHandling>Sync</ExceptionHandling>
       <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
@@ -183,10 +183,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"MinSizeRel\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\Developement\Tool_developement\c++\MinecraftTool\build;D:\Developement\Tool_developement\c++\MinecraftTool\JsonToObj;D:\Developement\Tool_developement\c++\MinecraftTool\rapidjson;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Development\Tool_developement\MinecraftTool_CMake\JsonToObj;C:\Development\Tool_developement\MinecraftTool_CMake\rapidjson;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\Developement\Tool_developement\c++\MinecraftTool\build;D:\Developement\Tool_developement\c++\MinecraftTool\JsonToObj;D:\Developement\Tool_developement\c++\MinecraftTool\rapidjson;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Development\Tool_developement\MinecraftTool_CMake\JsonToObj;C:\Development\Tool_developement\MinecraftTool_CMake\rapidjson;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -199,8 +199,8 @@
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>false</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>D:/Developement/Tool_developement/c++/MinecraftTool/build/MinecraftTool/MinSizeRel/MinecraftTool.lib</ImportLibrary>
-      <ProgramDataBaseFile>D:/Developement/Tool_developement/c++/MinecraftTool/build/MinecraftTool/MinSizeRel/MinecraftTool.pdb</ProgramDataBaseFile>
+      <ImportLibrary>C:/Development/Tool_developement/MinecraftTool_CMake/build/MinecraftTool/MinSizeRel/MinecraftTool.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Development/Tool_developement/MinecraftTool_CMake/build/MinecraftTool/MinSizeRel/MinecraftTool.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -209,7 +209,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>D:\Developement\Tool_developement\c++\MinecraftTool\build;D:\Developement\Tool_developement\c++\MinecraftTool\JsonToObj;D:\Developement\Tool_developement\c++\MinecraftTool\rapidjson;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Development\Tool_developement\MinecraftTool_CMake\JsonToObj;C:\Development\Tool_developement\MinecraftTool_CMake\rapidjson;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AssemblerListingLocation>$(IntDir)</AssemblerListingLocation>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <ExceptionHandling>Sync</ExceptionHandling>
@@ -223,10 +223,10 @@
     </ClCompile>
     <ResourceCompile>
       <PreprocessorDefinitions>%(PreprocessorDefinitions);WIN32;_WINDOWS;NDEBUG;CMAKE_INTDIR=\"RelWithDebInfo\"</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>D:\Developement\Tool_developement\c++\MinecraftTool\build;D:\Developement\Tool_developement\c++\MinecraftTool\JsonToObj;D:\Developement\Tool_developement\c++\MinecraftTool\rapidjson;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Development\Tool_developement\MinecraftTool_CMake\JsonToObj;C:\Development\Tool_developement\MinecraftTool_CMake\rapidjson;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ResourceCompile>
     <Midl>
-      <AdditionalIncludeDirectories>D:\Developement\Tool_developement\c++\MinecraftTool\build;D:\Developement\Tool_developement\c++\MinecraftTool\JsonToObj;D:\Developement\Tool_developement\c++\MinecraftTool\rapidjson;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Development\Tool_developement\MinecraftTool_CMake\JsonToObj;C:\Development\Tool_developement\MinecraftTool_CMake\rapidjson;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
       <HeaderFileName>%(Filename).h</HeaderFileName>
       <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
@@ -239,8 +239,8 @@
       <AdditionalOptions>%(AdditionalOptions) /machine:x64</AdditionalOptions>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
-      <ImportLibrary>D:/Developement/Tool_developement/c++/MinecraftTool/build/MinecraftTool/RelWithDebInfo/MinecraftTool.lib</ImportLibrary>
-      <ProgramDataBaseFile>D:/Developement/Tool_developement/c++/MinecraftTool/build/MinecraftTool/RelWithDebInfo/MinecraftTool.pdb</ProgramDataBaseFile>
+      <ImportLibrary>C:/Development/Tool_developement/MinecraftTool_CMake/build/MinecraftTool/RelWithDebInfo/MinecraftTool.lib</ImportLibrary>
+      <ProgramDataBaseFile>C:/Development/Tool_developement/MinecraftTool_CMake/build/MinecraftTool/RelWithDebInfo/MinecraftTool.pdb</ProgramDataBaseFile>
       <SubSystem>Console</SubSystem>
     </Link>
     <ProjectReference>
@@ -248,12 +248,11 @@
     </ProjectReference>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <CustomBuild Include="D:\Developement\Tool_developement\c++\MinecraftTool\MinecraftTool\CMakeLists.txt">
+    <CustomBuild Include="C:\Development\Tool_developement\MinecraftTool_CMake\MinecraftTool\CMakeLists.txt">
       <UseUtf8Encoding>Always</UseUtf8Encoding>
-      <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</BuildInParallel>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule D:/Developement/Tool_developement/c++/MinecraftTool/MinecraftTool/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building Custom Rule C:/Development/Tool_developement/MinecraftTool_CMake/MinecraftTool/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">setlocal
-"D:\Program Files\CMake\bin\cmake.exe" -SD:/Developement/Tool_developement/c++/MinecraftTool -BD:/Developement/Tool_developement/c++/MinecraftTool/build --check-stamp-file D:/Developement/Tool_developement/c++/MinecraftTool/build/MinecraftTool/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Development/Tool_developement/MinecraftTool_CMake -BC:/Development/Tool_developement/MinecraftTool_CMake/build --check-stamp-file C:/Development/Tool_developement/MinecraftTool_CMake/build/MinecraftTool/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -262,12 +261,11 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">D:\Developement\Tool_developement\c++\MinecraftTool\build\MinecraftTool\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">C:\Development\Tool_developement\MinecraftTool_CMake\build\MinecraftTool\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</LinkObjects>
-      <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</BuildInParallel>
-      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule D:/Developement/Tool_developement/c++/MinecraftTool/MinecraftTool/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building Custom Rule C:/Development/Tool_developement/MinecraftTool_CMake/MinecraftTool/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">setlocal
-"D:\Program Files\CMake\bin\cmake.exe" -SD:/Developement/Tool_developement/c++/MinecraftTool -BD:/Developement/Tool_developement/c++/MinecraftTool/build --check-stamp-file D:/Developement/Tool_developement/c++/MinecraftTool/build/MinecraftTool/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Development/Tool_developement/MinecraftTool_CMake -BC:/Development/Tool_developement/MinecraftTool_CMake/build --check-stamp-file C:/Development/Tool_developement/MinecraftTool_CMake/build/MinecraftTool/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -276,12 +274,11 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">D:\Developement\Tool_developement\c++\MinecraftTool\build\MinecraftTool\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">C:\Development\Tool_developement\MinecraftTool_CMake\build\MinecraftTool\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkObjects>
-      <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">true</BuildInParallel>
-      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule D:/Developement/Tool_developement/c++/MinecraftTool/MinecraftTool/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">Building Custom Rule C:/Development/Tool_developement/MinecraftTool_CMake/MinecraftTool/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">setlocal
-"D:\Program Files\CMake\bin\cmake.exe" -SD:/Developement/Tool_developement/c++/MinecraftTool -BD:/Developement/Tool_developement/c++/MinecraftTool/build --check-stamp-file D:/Developement/Tool_developement/c++/MinecraftTool/build/MinecraftTool/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Development/Tool_developement/MinecraftTool_CMake -BC:/Development/Tool_developement/MinecraftTool_CMake/build --check-stamp-file C:/Development/Tool_developement/MinecraftTool_CMake/build/MinecraftTool/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -290,12 +287,11 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">D:\Developement\Tool_developement\c++\MinecraftTool\build\MinecraftTool\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">C:\Development\Tool_developement\MinecraftTool_CMake\build\MinecraftTool\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|x64'">false</LinkObjects>
-      <BuildInParallel Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">true</BuildInParallel>
-      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule D:/Developement/Tool_developement/c++/MinecraftTool/MinecraftTool/CMakeLists.txt</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">Building Custom Rule C:/Development/Tool_developement/MinecraftTool_CMake/MinecraftTool/CMakeLists.txt</Message>
       <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">setlocal
-"D:\Program Files\CMake\bin\cmake.exe" -SD:/Developement/Tool_developement/c++/MinecraftTool -BD:/Developement/Tool_developement/c++/MinecraftTool/build --check-stamp-file D:/Developement/Tool_developement/c++/MinecraftTool/build/MinecraftTool/CMakeFiles/generate.stamp
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Development/Tool_developement/MinecraftTool_CMake -BC:/Development/Tool_developement/MinecraftTool_CMake/build --check-stamp-file C:/Development/Tool_developement/MinecraftTool_CMake/build/MinecraftTool/CMakeFiles/generate.stamp
 if %errorlevel% neq 0 goto :cmEnd
 :cmEnd
 endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
@@ -304,22 +300,22 @@ exit /b %1
 :cmDone
 if %errorlevel% neq 0 goto :VCEnd</Command>
       <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">%(AdditionalInputs)</AdditionalInputs>
-      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">D:\Developement\Tool_developement\c++\MinecraftTool\build\MinecraftTool\CMakeFiles\generate.stamp</Outputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">C:\Development\Tool_developement\MinecraftTool_CMake\build\MinecraftTool\CMakeFiles\generate.stamp</Outputs>
       <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|x64'">false</LinkObjects>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="D:\Developement\Tool_developement\c++\MinecraftTool\MinecraftTool\MinecraftTool.cpp" />
+    <ClCompile Include="C:\Development\Tool_developement\MinecraftTool_CMake\MinecraftTool\MinecraftTool.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="D:\Developement\Tool_developement\c++\MinecraftTool\build\ZERO_CHECK.vcxproj">
-      <Project>{061491D7-4E28-3CD6-99D7-F6D9F0D22AE0}</Project>
+    <ProjectReference Include="C:\Development\Tool_developement\MinecraftTool_CMake\build\ZERO_CHECK.vcxproj">
+      <Project>{F400D6B6-9720-307E-A186-AE1262C456FB}</Project>
       <Name>ZERO_CHECK</Name>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </ProjectReference>
-    <ProjectReference Include="D:\Developement\Tool_developement\c++\MinecraftTool\build\JsonToObj\JsonToObj.vcxproj">
-      <Project>{45075744-611E-3923-A4EE-F41D1B8CE879}</Project>
+    <ProjectReference Include="C:\Development\Tool_developement\MinecraftTool_CMake\build\JsonToObj\JsonToObj.vcxproj">
+      <Project>{EE57852C-193F-31F1-8C00-BFB23AEBC609}</Project>
       <Name>JsonToObj</Name>
     </ProjectReference>
   </ItemGroup>

@@ -1,4 +1,4 @@
-# Install script for directory: D:/Developement/Tool_developement/c++/MinecraftTool
+# Install script for directory: C:/Development/Tool_developement/MinecraftTool_CMake
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,28 +34,28 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/Developement/Tool_developement/c++/MinecraftTool/build/rapidjson/cmake_install.cmake")
+  include("C:/Development/Tool_developement/MinecraftTool_CMake/build/rapidjson/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/Developement/Tool_developement/c++/MinecraftTool/build/JsonToObj/cmake_install.cmake")
+  include("C:/Development/Tool_developement/MinecraftTool_CMake/build/JsonToObj/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/Developement/Tool_developement/c++/MinecraftTool/build/MinecraftTool/cmake_install.cmake")
+  include("C:/Development/Tool_developement/MinecraftTool_CMake/build/MinecraftTool/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT STREQUAL "Unspecified" OR NOT CMAKE_INSTALL_COMPONENT)
   if(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Dd][Ee][Bb][Uu][Gg])$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "D:/Developement/Tool_developement/c++/MinecraftTool/build/MinecraftTool/Debug/MinecraftTool.exe")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "C:/Development/Tool_developement/MinecraftTool_CMake/build/MinecraftTool/Debug/MinecraftTool.exe")
   elseif(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Rr][Ee][Ll][Ee][Aa][Ss][Ee])$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "D:/Developement/Tool_developement/c++/MinecraftTool/build/MinecraftTool/Release/MinecraftTool.exe")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "C:/Development/Tool_developement/MinecraftTool_CMake/build/MinecraftTool/Release/MinecraftTool.exe")
   elseif(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Mm][Ii][Nn][Ss][Ii][Zz][Ee][Rr][Ee][Ll])$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "D:/Developement/Tool_developement/c++/MinecraftTool/build/MinecraftTool/MinSizeRel/MinecraftTool.exe")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "C:/Development/Tool_developement/MinecraftTool_CMake/build/MinecraftTool/MinSizeRel/MinecraftTool.exe")
   elseif(CMAKE_INSTALL_CONFIG_NAME MATCHES "^([Rr][Ee][Ll][Ww][Ii][Tt][Hh][Dd][Ee][Bb][Ii][Nn][Ff][Oo])$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "D:/Developement/Tool_developement/c++/MinecraftTool/build/MinecraftTool/RelWithDebInfo/MinecraftTool.exe")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/bin" TYPE EXECUTABLE FILES "C:/Development/Tool_developement/MinecraftTool_CMake/build/MinecraftTool/RelWithDebInfo/MinecraftTool.exe")
   endif()
 endif()
 
@@ -84,5 +84,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "D:/Developement/Tool_developement/c++/MinecraftTool/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "C:/Development/Tool_developement/MinecraftTool_CMake/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
