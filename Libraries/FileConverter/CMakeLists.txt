@@ -1,4 +1,4 @@
-# JsonToObj subdirectory
+# FileConverter subdirectory
 add_library(FileConverter FileConverter.cpp)
 set(FileConverterIncludeDir "${CMAKE_CURRENT_SOURCE_DIR}" PARENT_SCOPE)
 
