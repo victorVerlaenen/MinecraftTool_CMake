@@ -5,7 +5,7 @@ MainComponent::MainComponent()
 {
 	// Make sure you set the size of the component after
 	// you add any child components.
-	setSize(800, 600);
+	setSize(500, 300);
 	setFramesPerSecond(60); // This sets the frequency of the update calls.
 
 	//addAndMakeVisible(m_DataTable);
@@ -22,6 +22,10 @@ MainComponent::MainComponent()
 	{
 		SelectFile();
 	};
+
+	addAndMakeVisible(m_SelectedFileLabel);
+	m_SelectedFileLabel.setFont(juce::Font(16.0f, juce::Font::bold));
+	m_SelectedFileLabel.setText("File to convert:", juce::dontSendNotification);
 }
 
 MainComponent::~MainComponent()
@@ -43,9 +47,6 @@ void MainComponent::paint(juce::Graphics& g)
 	g.fillAll(getLookAndFeel().findColour(juce::ResizableWindow::backgroundColourId));
 
 	// You can add your drawing code here!
-	g.setFont(juce::Font{ 16.f });
-	g.setColour(juce::Colours::white);
-	g.drawText(m_FileName, getLocalBounds(), juce::Justification::centred, true);
 }
 
 void MainComponent::resized()
@@ -54,22 +55,27 @@ void MainComponent::resized()
 	// If you add any child components, this is where you should
 	// update their positions.
 	//m_DataTable.setBounds(0, 0, getWidth(), getHeight());
-	m_SelectFileButton.setBounds(10, 10, 300, 20);
+	m_SelectedFileLabel.setJustificationType(juce::Justification::centred);
+	m_SelectedFileLabel.setBounds(10, 20, 0, 0);
+	m_InputFile.setBounds(m_SelectedFileLabel.getX() + m_SelectedFileLabel.getWidth(), 10, 300, 30);
+	m_SelectFileButton.setBounds(10, 40, 300, 20);
 }
 
 void MainComponent::SelectFile()
 {
-	juce::Logger::getCurrentLogger()->writeToLog("SelectFile function\n");
+	// the filechooser has to keep existing to make sure it works
+	m_upFileChooser = std::make_unique<juce::FileChooser>("Please select the file you want to convert...",
+		File::getSpecialLocation(File::userHomeDirectory),
+		"*.json");
 
-	juce::FileChooser chooser( "Select a file to open...", {}, "*" );
-	const auto result = chooser.getResult();
+	// You can add multiple options here with the bitwise AND
+	auto chooserFlags = FileBrowserComponent::openMode;
 
-	if (result == juce::File() || result.exists() == false)
-	{
-		juce::Logger::getCurrentLogger()->writeToLog("File does not exist\n");
-		return;
-	}
 
-	juce::Logger::getCurrentLogger()->writeToLog("File exists\n");
-	m_FileName = result.getFileName();
+	m_upFileChooser->launchAsync(chooserFlags, [this](const FileChooser& chooser)
+		{
+			File mooseFile(chooser.getResult());
+			m_InputFileName = mooseFile.getFullPathName();
+			m_InputFile.setText(m_InputFileName);
+		});
 }

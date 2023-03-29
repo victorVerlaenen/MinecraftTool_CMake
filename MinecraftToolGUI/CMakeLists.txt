@@ -13,8 +13,8 @@ juce_add_gui_app(MinecraftToolGUI
     VERSION "${PROJECT_VERSION}"
     COMPANY_NAME "VictorCorp"
     DOCUMENT_EXTENSIONS "bestext"
-    DOCUMENT_NAMES "My Document"
-    DOCUMENT_DESCRIPTIONS "My Document Description"
+    DOCUMENT_NAMES "MyDocument"
+    DOCUMENT_DESCRIPTIONS "MyDocumentDescription"
 )
 
 juce_generate_juce_header(MinecraftToolGUI)

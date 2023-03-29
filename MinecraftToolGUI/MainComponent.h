@@ -29,7 +29,11 @@ private:
     TableModel* m_pTableModel;
 
     juce::TextButton m_SelectFileButton;
-    juce::String m_FileName{"NoFileSelected"};
+    juce::String m_InputFileName{"NoFileSelected"};
+    juce::TextEditor m_InputFile;
+    juce::Label m_SelectedFileLabel;
+
+    std::unique_ptr<juce::FileChooser> m_upFileChooser;
 
     void SelectFile();
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainComponent)
