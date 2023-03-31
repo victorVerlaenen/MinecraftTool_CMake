@@ -16,16 +16,26 @@ MainComponent::MainComponent()
 	//m_DataTable.getHeader().addColumn("y", 3, 50, 20, 60);
 	//m_DataTable.getHeader().addColumn("z", 4, 50, 20, 60);
 
+	// SELECT FILE BUTTON
 	addAndMakeVisible(m_SelectFileButton);
-	m_SelectFileButton.setButtonText("Select file");
+	m_SelectFileButton.setButtonText("Browse");
 	m_SelectFileButton.onClick = [this]()
 	{
 		SelectFile();
 	};
 
+	// SELECTED FILE LABEL
+	addAndMakeVisible(m_SelectedFileEditableLabel);
+	m_SelectedFileEditableLabel.setEditable(true);
+	m_SelectedFileEditableLabel.setText("C:/", juce::dontSendNotification);
+	m_SelectedFileEditableLabel.setColour(juce::Label::textColourId, juce::Colours::white);
+	m_SelectedFileEditableLabel.setColour(juce::Label::backgroundColourId, juce::Colours::darkgrey);
+
+	// SELECT FILE LABEL
 	addAndMakeVisible(m_SelectedFileLabel);
-	m_SelectedFileLabel.setFont(juce::Font(16.0f, juce::Font::bold));
 	m_SelectedFileLabel.setText("File to convert:", juce::dontSendNotification);
+	m_SelectedFileLabel.attachToComponent(&m_SelectedFileEditableLabel, true);
+	m_SelectedFileLabel.setColour(juce::Label::textColourId, juce::Colours::white);
 }
 
 MainComponent::~MainComponent()
@@ -54,16 +64,12 @@ void MainComponent::resized()
 	// This is called when the MainContentComponent is resized.
 	// If you add any child components, this is where you should
 	// update their positions.
-	//m_DataTable.setBounds(0, 0, getWidth(), getHeight());
-	m_SelectedFileLabel.setJustificationType(juce::Justification::centred);
-	m_SelectedFileLabel.setBounds(10, 20, 0, 0);
-	m_InputFile.setBounds(m_SelectedFileLabel.getX() + m_SelectedFileLabel.getWidth(), 10, 300, 30);
-	m_SelectFileButton.setBounds(10, 40, 300, 20);
+	m_SelectFileButton.setBounds(320, 15, 100, 20);
+	m_SelectedFileEditableLabel.setBounds(110, 15, 200, 20);
 }
 
 void MainComponent::SelectFile()
 {
-	// the filechooser has to keep existing to make sure it works
 	m_upFileChooser = std::make_unique<juce::FileChooser>("Please select the file you want to convert...",
 		File::getSpecialLocation(File::userHomeDirectory),
 		"*.json");
@@ -71,11 +77,9 @@ void MainComponent::SelectFile()
 	// You can add multiple options here with the bitwise AND
 	auto chooserFlags = FileBrowserComponent::openMode;
 
-
 	m_upFileChooser->launchAsync(chooserFlags, [this](const FileChooser& chooser)
 		{
 			File mooseFile(chooser.getResult());
-			m_InputFileName = mooseFile.getFullPathName();
-			m_InputFile.setText(m_InputFileName);
+			m_SelectedFileEditableLabel.setText(mooseFile.getFullPathName(), juce::dontSendNotification);
 		});
 }

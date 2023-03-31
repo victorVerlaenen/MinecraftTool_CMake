@@ -28,10 +28,15 @@ private:
     juce::TableListBox m_DataTable;
     TableModel* m_pTableModel;
 
+    // File to convert
     juce::TextButton m_SelectFileButton;
-    juce::String m_InputFileName{"NoFileSelected"};
-    juce::TextEditor m_InputFile;
     juce::Label m_SelectedFileLabel;
+    juce::Label m_SelectedFileEditableLabel;
+
+    // Converted file
+    juce::TextButton m_NewFileLocationButton;
+    juce::Label m_NewFileLabel;
+    juce::Label m_NewFileEditableLabel;
 
     std::unique_ptr<juce::FileChooser> m_upFileChooser;
 
