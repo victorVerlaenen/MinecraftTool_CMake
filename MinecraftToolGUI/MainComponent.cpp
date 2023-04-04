@@ -1,41 +1,92 @@
 #include "MainComponent.h"
+#include "FileConverter.h"
 
 //==============================================================================
 MainComponent::MainComponent()
 {
 	// Make sure you set the size of the component after
 	// you add any child components.
-	setSize(500, 300);
+	setSize(450, 300);
 	setFramesPerSecond(60); // This sets the frequency of the update calls.
 
-	//addAndMakeVisible(m_DataTable);
-   // m_pTableModel = new TableModel();
-	//m_DataTable.setModel(m_pTableModel);
-	//m_DataTable.getHeader().addColumn("Name", 1, 100, 50, 200);
-	//m_DataTable.getHeader().addColumn("x", 2, 50, 20, 60);
-	//m_DataTable.getHeader().addColumn("y", 3, 50, 20, 60);
-	//m_DataTable.getHeader().addColumn("z", 4, 50, 20, 60);
-
-	// SELECT FILE BUTTON
-	addAndMakeVisible(m_SelectFileButton);
-	m_SelectFileButton.setButtonText("Browse");
-	m_SelectFileButton.onClick = [this]()
+	// FILE TO CONVERT
+	// BUTTON
+	addAndMakeVisible(m_FileToConvertButton);
+	m_FileToConvertButton.setButtonText("Browse");
+	m_FileToConvertButton.onClick = [this]()
 	{
 		SelectFile();
 	};
 
-	// SELECTED FILE LABEL
-	addAndMakeVisible(m_SelectedFileEditableLabel);
-	m_SelectedFileEditableLabel.setEditable(true);
-	m_SelectedFileEditableLabel.setText("C:/", juce::dontSendNotification);
-	m_SelectedFileEditableLabel.setColour(juce::Label::textColourId, juce::Colours::white);
-	m_SelectedFileEditableLabel.setColour(juce::Label::backgroundColourId, juce::Colours::darkgrey);
+	// EDITABLE LABEL
+	addAndMakeVisible(m_FileToConvertEditableLabel);
+	m_FileToConvertEditableLabel.setEditable(true);
+	m_FileToConvertEditableLabel.setText("C:\\", juce::dontSendNotification);
+	m_FileToConvertEditableLabel.setColour(juce::Label::textColourId, juce::Colours::white);
+	m_FileToConvertEditableLabel.setColour(juce::Label::backgroundColourId, juce::Colours::darkgrey);
+	m_FileToConvertEditableLabel.onTextChange = [this]()
+	{
+		m_FileToConvert = juce::File(m_FileToConvertEditableLabel.getText());
 
-	// SELECT FILE LABEL
-	addAndMakeVisible(m_SelectedFileLabel);
-	m_SelectedFileLabel.setText("File to convert:", juce::dontSendNotification);
-	m_SelectedFileLabel.attachToComponent(&m_SelectedFileEditableLabel, true);
-	m_SelectedFileLabel.setColour(juce::Label::textColourId, juce::Colours::white);
+		if (m_FileToConvert.existsAsFile() == false)
+		{
+			m_FileToConvertEditableLabel.setColour(juce::Label::backgroundColourId, juce::Colours::indianred);
+		}
+		else
+		{
+			m_FileToConvertEditableLabel.setColour(juce::Label::backgroundColourId, juce::Colours::darkgrey);
+		}
+		Logger::getCurrentLogger()->writeToLog(m_FileToConvert.getFullPathName() + "\n");
+	};
+
+	// LABEL
+	addAndMakeVisible(m_FileToConvertLabel);
+	m_FileToConvertLabel.setText("File to convert:", juce::dontSendNotification);
+	m_FileToConvertLabel.attachToComponent(&m_FileToConvertEditableLabel, true);
+	m_FileToConvertLabel.setColour(juce::Label::textColourId, juce::Colours::white);
+
+	// NEW FILE
+	// BUTTON
+	addAndMakeVisible(m_NewFileButton);
+	m_NewFileButton.setButtonText("Browse");
+	m_NewFileButton.onClick = [this]()
+	{
+		SelectFile(true);
+	};
+
+	// EDITABLE LABEL
+	addAndMakeVisible(m_NewFileEditableLabel);
+	m_NewFileEditableLabel.setEditable(true);
+	m_NewFileEditableLabel.setText("C:\\", juce::dontSendNotification);
+	m_NewFileEditableLabel.setColour(juce::Label::textColourId, juce::Colours::white);
+	m_NewFileEditableLabel.setColour(juce::Label::backgroundColourId, juce::Colours::darkgrey);
+	m_NewFileEditableLabel.onTextChange = [this]()
+	{
+		m_NewFile = juce::File(m_NewFileEditableLabel.getText());
+		if (m_NewFile.exists() == false)
+		{
+			m_NewFileEditableLabel.setColour(juce::Label::backgroundColourId, juce::Colours::indianred);
+		}
+		else
+		{
+			m_NewFileEditableLabel.setColour(juce::Label::backgroundColourId, juce::Colours::darkgrey);
+		}
+		Logger::getCurrentLogger()->writeToLog(m_NewFile.getFullPathName() + "\n");
+	};
+
+	// LABEL
+	addAndMakeVisible(m_NewFileLabel);
+	m_NewFileLabel.setText("Location to save:", juce::dontSendNotification);
+	m_NewFileLabel.attachToComponent(&m_NewFileEditableLabel, true);
+	m_NewFileLabel.setColour(juce::Label::textColourId, juce::Colours::white);
+
+	// CONVERT
+	addAndMakeVisible(m_ConvertButton);
+	m_ConvertButton.setButtonText("Convert");
+	m_ConvertButton.onClick = [this]()
+	{
+		ConvertFile();
+	};
 }
 
 MainComponent::~MainComponent()
@@ -64,22 +115,63 @@ void MainComponent::resized()
 	// This is called when the MainContentComponent is resized.
 	// If you add any child components, this is where you should
 	// update their positions.
-	m_SelectFileButton.setBounds(320, 15, 100, 20);
-	m_SelectedFileEditableLabel.setBounds(110, 15, 200, 20);
+	m_FileToConvertButton.setBounds(340, 15, 100, 20);
+	m_FileToConvertEditableLabel.setBounds(130, 15, 200, 20);
+
+	m_NewFileButton.setBounds(340, 40, 100, 20);
+	m_NewFileEditableLabel.setBounds(130, 40, 200, 20);
+
+	m_ConvertButton.setBounds(200, 70, 100, 20);
 }
 
-void MainComponent::SelectFile()
+void MainComponent::SelectFile(bool isSaveLocation)
 {
-	m_upFileChooser = std::make_unique<juce::FileChooser>("Please select the file you want to convert...",
-		File::getSpecialLocation(File::userHomeDirectory),
-		"*.json");
-
 	// You can add multiple options here with the bitwise AND
-	auto chooserFlags = FileBrowserComponent::openMode;
+	auto chooserFlags = isSaveLocation ? FileBrowserComponent::openMode | FileBrowserComponent::canSelectDirectories : FileBrowserComponent::openMode;
+	const auto browserTitle = isSaveLocation ? "Select the location to save the new file..." : "Select the file you want to convert...";
+	const auto filePattern = isSaveLocation ? juce::String() : "*.json";
+	m_upFileChooser = std::make_unique<juce::FileChooser>(browserTitle,
+		File::getSpecialLocation(File::userHomeDirectory),
+		filePattern);
 
-	m_upFileChooser->launchAsync(chooserFlags, [this](const FileChooser& chooser)
+	m_upFileChooser->launchAsync(chooserFlags, [this, &isSaveLocation](const FileChooser& chooser)
 		{
 			File mooseFile(chooser.getResult());
-			m_SelectedFileEditableLabel.setText(mooseFile.getFullPathName(), juce::dontSendNotification);
+			if (mooseFile == juce::File() || mooseFile.exists() == false)
+				return;
+
+			auto& labelToSet = isSaveLocation ? m_NewFileEditableLabel : m_FileToConvertEditableLabel;
+			if (isSaveLocation)
+			{
+				m_NewFile = chooser.getResult();
+			}
+			else
+			{
+				m_FileToConvert = chooser.getResult();
+			}
+
+			labelToSet.setText(mooseFile.getFullPathName(), juce::dontSendNotification);
 		});
+}
+
+void MainComponent::ConvertFile()
+{
+	using namespace convert;
+
+	// Create the vector of blocks to fill
+	std::vector<Block*> blocks{};
+
+	// Read the json file and fill the vector of blocks
+	auto fileToParse{ m_FileToConvert.getFullPathName() };
+	bool result = FileConverter::ParseJsonToBlocks(fileToParse.toWideCharPointer(), blocks);
+
+	// Write the obj file with the vector of blocks
+	auto newFile{ m_NewFile.getFullPathName() + "/" + m_FileToConvert.getFileNameWithoutExtension() + ".obj" };
+	FileConverter::WriteBlocksToObj(newFile.toWideCharPointer(), blocks);
+
+	// release memory
+	for (auto pBlock : blocks)
+	{
+		delete pBlock;
+	}
 }

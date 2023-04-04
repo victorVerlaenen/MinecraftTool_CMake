@@ -29,17 +29,23 @@ private:
     TableModel* m_pTableModel;
 
     // File to convert
-    juce::TextButton m_SelectFileButton;
-    juce::Label m_SelectedFileLabel;
-    juce::Label m_SelectedFileEditableLabel;
+    juce::TextButton m_FileToConvertButton;
+    juce::Label m_FileToConvertLabel;
+    juce::Label m_FileToConvertEditableLabel;
+    juce::File m_FileToConvert;
 
     // Converted file
-    juce::TextButton m_NewFileLocationButton;
+    juce::TextButton m_NewFileButton;
     juce::Label m_NewFileLabel;
     juce::Label m_NewFileEditableLabel;
+    juce::File m_NewFile;
+
+    // Convert button
+    juce::TextButton m_ConvertButton;
 
     std::unique_ptr<juce::FileChooser> m_upFileChooser;
 
-    void SelectFile();
+    void SelectFile(bool isSaveLocation = false);
+    void ConvertFile();
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MainComponent)
 };
