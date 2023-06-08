@@ -19,7 +19,7 @@ juce_add_gui_app(MinecraftToolGUI
 
 juce_generate_juce_header(MinecraftToolGUI)
 
-target_sources(MinecraftToolGUI PRIVATE ${SOURCES} "TableModel.h" "TableModel.cpp" "NamedVector3.h" "NamedVector3.cpp")
+target_sources(MinecraftToolGUI PRIVATE ${SOURCES} "TableModel.h" "TableModel.cpp" "NamedVector3.h" "NamedVector3.cpp" "FileOutput.h" "FileOutput.cpp")
 
 # Link against the JUCE module
 target_link_libraries(MinecraftToolGUI

@@ -1,6 +1,6 @@
 #pragma once
 #include <JuceHeader.h>
-#include "NamedVector3.h"
+#include "FileOutput.h"
 class TableModel :public juce::TableListBoxModel
 {
 public:
@@ -16,6 +16,7 @@ public:
 		bool 	rowIsSelected
 	)override;
 
+	void SetFile(int index, bool converted, juce::String name, juce::String extension, juce::String path);
 private:
-	std::vector<NamedVector3> m_Vectors;
+	std::vector<FileOutput> m_FileOutputs;
 };

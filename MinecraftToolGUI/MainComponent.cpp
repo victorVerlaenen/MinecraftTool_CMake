@@ -9,6 +9,15 @@ MainComponent::MainComponent()
 	setSize(450, 300);
 	setFramesPerSecond(60); // This sets the frequency of the update calls.
 
+	// TABLE OUTPUT
+	addAndMakeVisible(m_DataTable);
+	m_pTableModel = new TableModel();
+	m_DataTable.setModel(m_pTableModel);
+	m_DataTable.getHeader().addColumn("Converted", 1, 60, 50, 200);
+	m_DataTable.getHeader().addColumn("Name", 2, 150, 20, 60);
+	m_DataTable.getHeader().addColumn("Extension", 3, 70, 20, 60);
+	m_DataTable.getHeader().addColumn("Path", 4, getWidth() - 60 - 150 - 70, 20, 60);
+	
 	// FILE TO CONVERT
 	// BUTTON
 	addAndMakeVisible(m_FileToConvertButton);
@@ -87,11 +96,15 @@ MainComponent::MainComponent()
 	{
 		ConvertFile();
 	};
+
+	// Cancel
+	addAndMakeVisible(m_CancelButton);
+	m_CancelButton.setButtonText("Cancel");
 }
 
 MainComponent::~MainComponent()
 {
-	//delete m_pTableModel;
+	delete m_pTableModel;
 }
 
 //==============================================================================
@@ -121,7 +134,10 @@ void MainComponent::resized()
 	m_NewFileButton.setBounds(340, 40, 100, 20);
 	m_NewFileEditableLabel.setBounds(130, 40, 200, 20);
 
-	m_ConvertButton.setBounds(200, 70, 100, 20);
+	m_ConvertButton.setBounds(20, 70, 100, 20);
+	m_CancelButton.setBounds(140, 70, 100, 20);
+
+	m_DataTable.setBounds(0, 110, getWidth(), getHeight());
 }
 
 void MainComponent::SelectFile(bool isSaveLocation)
@@ -134,11 +150,13 @@ void MainComponent::SelectFile(bool isSaveLocation)
 		File::getSpecialLocation(File::userHomeDirectory),
 		filePattern);
 
-	m_upFileChooser->launchAsync(chooserFlags, [this, &isSaveLocation](const FileChooser& chooser)
+	m_upFileChooser->launchAsync(chooserFlags, [this, isSaveLocation](const FileChooser& chooser)
 		{
 			File mooseFile(chooser.getResult());
 			if (mooseFile == juce::File() || mooseFile.exists() == false)
 				return;
+
+			Logger::getCurrentLogger()->writeToLog(isSaveLocation ? "isSave" : "isNotSave");
 
 			auto& labelToSet = isSaveLocation ? m_NewFileEditableLabel : m_FileToConvertEditableLabel;
 			if (isSaveLocation)
@@ -168,6 +186,10 @@ void MainComponent::ConvertFile()
 	// Write the obj file with the vector of blocks
 	auto newFile{ m_NewFile.getFullPathName() + "/" + m_FileToConvert.getFileNameWithoutExtension() + ".obj" };
 	FileConverter::WriteBlocksToObj(newFile.toWideCharPointer(), blocks);
+
+	// Update the output table
+	m_pTableModel->SetFile(0, true, m_FileToConvert.getFileNameWithoutExtension(), m_NewFile.getFileExtension(), m_NewFile.getFullPathName());
+	m_pTableModel->SetFile(1, false, m_FileToConvert.getFileNameWithoutExtension(), m_FileToConvert.getFileExtension(), m_FileToConvert.getFullPathName());
 
 	// release memory
 	for (auto pBlock : blocks)

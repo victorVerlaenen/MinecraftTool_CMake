@@ -42,6 +42,8 @@ private:
 
     // Convert button
     juce::TextButton m_ConvertButton;
+    // Cancel button
+    juce::TextButton m_CancelButton;
 
     std::unique_ptr<juce::FileChooser> m_upFileChooser;
 
